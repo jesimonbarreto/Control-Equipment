@@ -2,12 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package movimento456;
+package Gerente;
 
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
+import presentation.ALayerShape;
 
 /**
  *
@@ -15,8 +16,6 @@ import java.awt.image.ImageObserver;
  */
 public class NewShape extends MyALayerShape {
 
-    public NewShape() throws Exception {
-    }
     ImageObserver imagemOb;
     BufferedImage image = null;
 
@@ -28,15 +27,5 @@ public class NewShape extends MyALayerShape {
     @Override
     public void draw(Graphics grphcs) {
         grphcs.drawImage(image, this.getPoint(0).x, this.getPoint(0).y, (this.getPoint(1).x - this.getPoint(0).x), (this.getPoint(1).y - this.getPoint(0).y), imagemOb);
-    }
-
-    @Override
-    public void action(MyscreenPanel sp) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void stopAction(MyscreenPanel sp) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

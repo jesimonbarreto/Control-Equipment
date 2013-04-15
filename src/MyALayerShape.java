@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package movimento456;
+
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -16,15 +16,6 @@ import presentation.ALayerShape;
 public abstract class MyALayerShape extends ALayerShape {
 
     private Point[] coordinate = new Point[2];
-    private boolean clicado = false;
-
-    public boolean isClicado() {
-        return clicado;
-    }
-
-    public void setClicado(boolean clicado) {
-        this.clicado = clicado;
-    }
 
     public MyALayerShape() throws Exception {
         super();
@@ -50,17 +41,4 @@ public abstract class MyALayerShape extends ALayerShape {
         return contem;
     }
 
-    public abstract void action(MyscreenPanel sp);
-
-    public abstract void stopAction(MyscreenPanel sp);
-
-    @Override
-    public void draw(Graphics grphcs) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 }
