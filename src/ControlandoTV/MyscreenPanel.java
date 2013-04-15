@@ -4,11 +4,10 @@ package ControlandoTV;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import Gerente.ControlePorta;
 import Gerente.GerenteDeGestoseAcoes;
+import Gerente.MyALayerShape;
 import java.awt.Graphics;
-import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Vector;
