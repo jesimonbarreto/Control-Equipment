@@ -1,18 +1,18 @@
+package ControlandoTV;
+
+
+import Gerente.Gesto;
+import org.OpenNI.Point3D;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
-import Gerente.Gesto;
-import Gerente.NewShape;
-import java.awt.Graphics;
-import org.OpenNI.Point3D;
-
 /**
  *
  * @author Geral
  */
-public class GestoBaixo extends Gesto {
+public class GestoCentro extends Gesto {
 
     @Override
     public void LeituraPontos(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
@@ -21,8 +21,10 @@ public class GestoBaixo extends Gesto {
     @Override
     public boolean Aconteceu(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
         boolean aconteceu = false;
-        if (ponto1.getY() < ponto5.getY()) {
-            aconteceu = true;
+        if (ponto1.getY() > ponto3.getY()) {
+            if (ponto1.getY() < ponto5.getY()) {
+                aconteceu = true;
+            }
         }
         return aconteceu;
     }

@@ -1,3 +1,5 @@
+package ControlandoTV;
+
 
 import Gerente.AcaoReal;
 import Gerente.ControlePorta;
@@ -12,20 +14,20 @@ import Gerente.NewShape;
  *
  * @author Geral
  */
-public class ADireito extends AcaoReal {
+public class ACentro extends AcaoReal {
 
     @Override
     public void executeArduino(ControlePorta cp, MyscreenPanel sp) {
         sp.removerShape(7);
         NewShape ns = null;
         try {
-            ns = new NewShape(sp.imagem[4], sp);
+            ns = new NewShape(sp.imagem[1], sp);
         } catch (Exception erro) {
             System.out.println("Erro ADD SHAPE");
         }
         //set point pontos selecionados(padrões)
         sp.addLayerShape(ns);
-        //Enviar char para arduíno iniciar ação throw new UnsupportedOperationException("Not supported yet.");
+        //Enviar char para arduíno iniciar ação
     }
 
     @Override

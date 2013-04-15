@@ -1,3 +1,5 @@
+package ControlandoTV;
+
 
 import Gerente.AcaoReal;
 import Gerente.ControlePorta;
@@ -12,14 +14,14 @@ import Gerente.NewShape;
  *
  * @author Geral
  */
-public class ACentro extends AcaoReal {
+public class ACima extends AcaoReal {
 
     @Override
     public void executeArduino(ControlePorta cp, MyscreenPanel sp) {
         sp.removerShape(7);
         NewShape ns = null;
         try {
-            ns = new NewShape(sp.imagem[1], sp);
+            ns = new NewShape(sp.imagem[2], sp);
         } catch (Exception erro) {
             System.out.println("Erro ADD SHAPE");
         }
