@@ -71,7 +71,32 @@ public final class MyscreenPanel extends ScreenPanel {
         this.shapes.remove(position);
     }
 
-    public void inserir() {
+    public void inserindoGestoEAcoes() {
+        GestoCima gc = new GestoCima();
+        gc.setNomeClasse("GestoCima");
+        gerente.addGestos(gc);
+        GestoCentro gcen = new GestoCentro();
+        gc.setNomeClasse("GestoCentro");
+        gerente.addGestos(gcen);
+        GestoBaixo gb = new GestoBaixo();
+        gc.setNomeClasse("GestoBaixo");
+        gerente.addGestos(gb);
+        GestoDireita gd = new GestoDireita();
+        gc.setNomeClasse("GestoDireita");
+        gerente.addGestos(gd);
+        GestosEsquerda ge = new GestosEsquerda();
+        gc.setNomeClasse("GestoEsquerda");
+        gerente.addGestos(ge);
+        ACima ac = new ACima();
+        gerente.addAcao("GestoCima", ac);
+        ACentro acen = new ACentro();
+        gerente.addAcao("GestoCentro", acen);
+        ABaixo ab = new ABaixo();
+        gerente.addAcao("GestoBaixo", ab);
+        ADireito ad = new ADireito();
+        gerente.addAcao("GestoDireita", ad);
+        AEsquerdo ae = new AEsquerdo();
+        gerente.addAcao("GestoEsquerda", ae);
     }
 
     @Override

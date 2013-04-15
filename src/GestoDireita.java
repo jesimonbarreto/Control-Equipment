@@ -20,6 +20,10 @@ public class GestoDireita extends Gesto {
 
     @Override
     public boolean Aconteceu(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        boolean aconteceu=false;
+        if(ponto1.getX()>ponto4.getX()){
+            aconteceu=true;
+        }
+        return aconteceu;
     }
 }

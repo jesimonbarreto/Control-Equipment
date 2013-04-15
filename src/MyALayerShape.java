@@ -25,7 +25,7 @@ public abstract class MyALayerShape extends ALayerShape {
         coordinate[i] = new Point(x, y);
 
     }
-
+        
     public Point getPoint(int i) {
         return coordinate[i];
     }
