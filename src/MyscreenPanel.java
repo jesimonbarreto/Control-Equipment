@@ -1,12 +1,13 @@
-package ControlandoTV;
+
 
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-import Gerente.ControlePorta;
+import Arduino.ControlePorta;
 import Gerente.GerenteDeGestoseAcoes;
-import Gerente.MyALayerShape;
+import GestosCadastrados.*;
+import Painel.MyALayerShape;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -19,7 +20,7 @@ import presentation.impl.KinectMotionCapture.layers.ScreenPanel;
  *
  * @author Geral
  */
-public final class MyscreenPanel extends ScreenPanel {
+public final class MyscreenPanel extends Painel.MyscreenPanel {
 
     Vector shapes = new Vector();
     BufferedImage[] image = null;
@@ -29,7 +30,7 @@ public final class MyscreenPanel extends ScreenPanel {
     int positionFinalRigth = 0;
     int controle = 0;
     ControlePorta cp = new ControlePorta();
-    GerenteDeGestoseAcoes gerente = new GerenteDeGestoseAcoes();
+    GerenteDeGestoseAcoes gerente = new GerenteDeGestoseAcoes(this);
 
     public MyscreenPanel() throws Exception {
         super();
@@ -72,6 +73,11 @@ public final class MyscreenPanel extends ScreenPanel {
         this.shapes.remove(position);
     }
 
+    public void substituirShape(int posicaoShapeRemover, ALayerShape shape) {
+        this.removerShape(posicaoShapeRemover);
+        this.addLayerShape(shape);
+    }
+
     public void inserindoGestoEAcoes() {
         GestoCima gc = new GestoCima();
         gc.setNomeClasse("GestoCima");
@@ -111,5 +117,6 @@ public final class MyscreenPanel extends ScreenPanel {
 
 
         }
+        this.repaint();
     }
 }
