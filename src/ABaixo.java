@@ -21,6 +21,7 @@ public class ABaixo extends ActionReal {
         }
         //setpoint pontos selecionados(padrões)
         pnl.addMyLayerShape(ns);
+        //eu estou aqui
     }
 
     @Override
