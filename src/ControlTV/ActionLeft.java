@@ -1,3 +1,5 @@
+package ControlTV;
+
 
 import Action.*;
 import Arduino.*;
@@ -8,20 +10,21 @@ import Panel.NewShape;
  *
  * @author JB
  */
-public class ACentro extends ActionReal {
+public class ActionLeft extends ActionReal {
 
     @Override
     public void runArduino(PortControl pc, MyscreenPanel pnl) {
         pnl.removerShape(7);
         NewShape ns = null;
         try {
-            ns = new NewShape(pnl.imagem[1], pnl);
+            ns = new NewShape(pnl.imagem[5], pnl);
         } catch (Exception erro) {
             System.out.println("Erro ADD SHAPE");
         }
         //set point pontos selecionados(padrões)
         pnl.addLayerShape(ns);
-        //Enviar char para arduíno iniciar ação
+        //Enviar char para arduíno iniciar ação throw new UnsupportedOperationException("Not supported yet.");
+
     }
 
     @Override

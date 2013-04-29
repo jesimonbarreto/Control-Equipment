@@ -1,3 +1,5 @@
+package ControlTV;
+
 
 import Action.*;
 import Arduino.*;
@@ -8,7 +10,7 @@ import Panel.NewShape;
  *
  * @author JB
  */
-public class ADireito extends ActionReal {
+public class ActionRigth extends ActionReal {
 
     @Override
     public void runArduino(PortControl pc, MyscreenPanel pnl) {

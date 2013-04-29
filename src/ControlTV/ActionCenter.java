@@ -1,6 +1,8 @@
+package ControlTV;
 
-import Action.ActionReal;
-import Arduino.PortControl;
+
+import Action.*;
+import Arduino.*;
 import Panel.MyscreenPanel;
 import Panel.NewShape;
 
@@ -8,20 +10,20 @@ import Panel.NewShape;
  *
  * @author JB
  */
-public class ABaixo extends ActionReal {
+public class ActionCenter extends ActionReal {
 
     @Override
     public void runArduino(PortControl pc, MyscreenPanel pnl) {
         pnl.removerShape(7);
         NewShape ns = null;
         try {
-            ns = new NewShape(pnl.imagem[2], pnl);
+            ns = new NewShape(pnl.imagem[1], pnl);
         } catch (Exception erro) {
             System.out.println("Erro ADD SHAPE");
         }
-        //setpoint pontos selecionados(padrões)
-        pnl.addMyLayerShape(ns);
-        //eu estou aqui
+        //set point pontos selecionados(padrões)
+        pnl.addLayerShape(ns);
+        //Enviar char para arduíno iniciar ação
     }
 
     @Override
