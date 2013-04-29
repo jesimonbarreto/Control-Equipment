@@ -1,26 +1,20 @@
 
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-import Arduino.ControlePorta;
-import Gerente.GerenteDeGestoseAcoes;
-import GestosCadastrados.*;
-import Painel.MyALayerShape;
+import Arduino.PortControl;
+import Manager.ManagerGA;
+import GesturesStandards.*;
+import Panel.MyALayerShape;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Vector;
 import javax.imageio.ImageIO;
 import presentation.ALayerShape;
-import presentation.impl.KinectMotionCapture.layers.ScreenPanel;
 
 /**
  *
- * @author Geral
+ * @author JB
  */
-public final class MyscreenPanel extends Painel.MyscreenPanel {
+public final class MyscreenPanel extends Panel.MyscreenPanel {
 
     Vector shapes = new Vector();
     BufferedImage[] image = null;
@@ -29,8 +23,8 @@ public final class MyscreenPanel extends Painel.MyscreenPanel {
     int positionInicialRigth = 0;
     int positionFinalRigth = 0;
     int controle = 0;
-    ControlePorta cp = new ControlePorta();
-    GerenteDeGestoseAcoes gerente = new GerenteDeGestoseAcoes(this);
+    PortControl cp = new PortControl();
+    ManagerGA gerente = new ManagerGA(this);
 
     public MyscreenPanel() throws Exception {
         super();
@@ -79,31 +73,6 @@ public final class MyscreenPanel extends Painel.MyscreenPanel {
     }
 
     public void inserindoGestoEAcoes() {
-        GestoCima gc = new GestoCima();
-        gc.setNomeClasse("GestoCima");
-        gerente.addGestos(gc);
-        GestoCentro gcen = new GestoCentro();
-        gc.setNomeClasse("GestoCentro");
-        gerente.addGestos(gcen);
-        GestoBaixo gb = new GestoBaixo();
-        gc.setNomeClasse("GestoBaixo");
-        gerente.addGestos(gb);
-        GestoDireita gd = new GestoDireita();
-        gc.setNomeClasse("GestoDireita");
-        gerente.addGestos(gd);
-        GestosEsquerda ge = new GestosEsquerda();
-        gc.setNomeClasse("GestoEsquerda");
-        gerente.addGestos(ge);
-        ACima ac = new ACima();
-        gerente.addAcao("GestoCima", ac);
-        ACentro acen = new ACentro();
-        gerente.addAcao("GestoCentro", acen);
-        ABaixo ab = new ABaixo();
-        gerente.addAcao("GestoBaixo", ab);
-        ADireito ad = new ADireito();
-        gerente.addAcao("GestoDireita", ad);
-        AEsquerdo ae = new AEsquerdo();
-        gerente.addAcao("GestoEsquerda", ae);
     }
 
     @Override

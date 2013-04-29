@@ -1,34 +1,30 @@
 
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-import Acao.AcaoReal;
-import Arduino.ControlePorta;
-import Painel.NewShape;
+import Action.ActionReal;
+import Arduino.PortControl;
+import Panel.MyscreenPanel;
+import Panel.NewShape;
 
 /**
  *
- * @author Geral
+ * @author JB
  */
-public class ABaixo extends AcaoReal {
+public class ABaixo extends ActionReal {
 
     @Override
-    public void executeArduino(ControlePorta cp, Painel.MyscreenPanel sp) {
-        sp.removerShape(7);
+    public void runArduino(PortControl pc, MyscreenPanel pnl) {
+        pnl.removerShape(7);
         NewShape ns = null;
         try {
-            ns = new NewShape(sp.imagem[2], sp);
+            ns = new NewShape(pnl.imagem[2], pnl);
         } catch (Exception erro) {
             System.out.println("Erro ADD SHAPE");
         }
         //setpoint pontos selecionados(padrões)
-        sp.addMyLayerShape(ns);
+        pnl.addMyLayerShape(ns);
     }
 
     @Override
-    public void pararAcao(ControlePorta cp, Painel.MyscreenPanel sp) {
+    public void stopAction(PortControl pc, MyscreenPanel pnl) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
