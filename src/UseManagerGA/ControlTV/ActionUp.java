@@ -1,4 +1,4 @@
-package ControlTV;
+package UseManagerGA.ControlTV;
 
 
 import Action.*;
@@ -10,14 +10,14 @@ import Panel.NewShape;
  *
  * @author JB
  */
-public class ActionCenter extends ActionReal {
+public class ActionUp extends ActionReal {
 
     @Override
     public void runArduino(PortControl pc, MyscreenPanel pnl) {
         pnl.removerShape(7);
         NewShape ns = null;
         try {
-            ns = new NewShape(pnl.imagem[1], pnl);
+            ns = new NewShape(pnl.imagem[2], pnl);
         } catch (Exception erro) {
             System.out.println("Erro ADD SHAPE");
         }
